@@ -1,0 +1,11 @@
+@tailwind base;
+
+@layer base {
+    body {
+        @apply m-0;
+        @apply bg-slate-50;
+    }
+}
+
+@tailwind components;
+@tailwind utilities;

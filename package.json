@@ -1,0 +1,64 @@
+{
+  "name": "acacia-web-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@headlessui/react": "^1.6.6",
+    "@heroicons/react": "^1.0.6",
+    "@stripe/react-stripe-js": "^1.9.0",
+    "@stripe/stripe-js": "^1.32.0",
+    "@stripe/terminal-js": "^0.10.1",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.2.1",
+    "@types/jest": "^28.1.3",
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.3",
+    "http-proxy-middleware": "^2.0.6",
+    "i18next": "^21.8.14",
+    "labsApi": "file:./src/api/ar",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.33.1",
+    "react-i18next": "^11.18.1",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.7.4",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "HTTPS=true SSL_CRT_FILE=./.cert/cert.pem SSL_KEY_FILE=./.cert/key.pem react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "fetch-openapi": "curl https://localhost:3000/api/openapi.json -o src/api/openapi.json",
+    "generate-ar": "autorest --typescript --input-file=src/api/openapi.json --output-folder=src/api/ar",
+    "generate-otc": "openapi --input src/api/openapi.json --output src/api/otc --name LabsApiClient"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "openapi-typescript-codegen": "^0.23.0",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.4"
+  }
+}
